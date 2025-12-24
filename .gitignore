@@ -64,8 +64,15 @@ Thumbs.db
 *.log
 logs/
 
+# Data files
+*.parquet
+data/
+
 # Local development
 *.local
+
+
+
 
 
 
