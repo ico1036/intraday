@@ -46,7 +46,7 @@ Binance에서 무료로 제공하는 히스토리컬 데이터를 다운로드�
 
 ```bash
 # 스크립트로 실행
-python scripts/run_tick_backtest.py
+uv run python scripts/run_tick_backtest.py
 ```
 
 ```python
@@ -98,10 +98,10 @@ Binance는 오더북 히스토리를 제공하지 않으므로 직접 수집해�
 
 ```bash
 # Step 1: 오더북 데이터 수집 (1시간)
-python scripts/record_orderbook.py --duration 3600
+uv run python scripts/record_orderbook.py --duration 3600
 
 # Step 2: 백테스트 실행
-python scripts/run_orderbook_backtest.py
+uv run python scripts/run_orderbook_backtest.py
 ```
 
 ```python
@@ -145,7 +145,7 @@ report.print_summary()
 실시간 WebSocket 데이터로 전략을 테스트합니다.
 
 ```bash
-python scripts/run_forward_test.py
+uv run python scripts/run_forward_test.py
 ```
 
 ```python
@@ -200,16 +200,16 @@ uv run python -m intraday.dashboard
 
 ```bash
 # 1. Tick 백테스트부터 시작 (데이터 즉시 다운로드 가능)
-python scripts/run_tick_backtest.py
+uv run python scripts/run_tick_backtest.py
 
 # 2. 오더북 데이터 수집 (백그라운드로 1시간)
-python scripts/record_orderbook.py --duration 3600 &
+uv run python scripts/record_orderbook.py --duration 3600 &
 
 # 3. 수집 완료 후 오더북 백테스트
-python scripts/run_orderbook_backtest.py
+uv run python scripts/run_orderbook_backtest.py
 
 # 4. 실시간 포워드 테스트
-python scripts/run_forward_test.py
+uv run python scripts/run_forward_test.py
 ```
 
 ## 프로젝트 구조
